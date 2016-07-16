@@ -12,9 +12,10 @@ NOTE: The note icon is not rendering.
 .Another title
 TIP: Neither is the tip icon.
 
+== Themes
+I tried the link:https://github.com/HubPress/hubpress.io/tree/master/themes[themes] available. +
+Here's how they look.
 
-.Sidebar title
-****
-Sidebar stuff +
-blah blah
-****
+.Block image
+image::http://github.com/blahster/blahster.github.io/images/casper-screenshot.png[casper]
+
