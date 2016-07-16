@@ -3,3 +3,11 @@
 
 Trying out HubPress. +
 No idea how AsciiDoc works just yet.
+
+link:https://powerman.name/doc/asciidoc[This] seems like a good cheatsheet for AsciiDoc syntax.
+
+.This is a title
+NOTE: Does this work?
+
+.Another title
+TIP: just a tip.
