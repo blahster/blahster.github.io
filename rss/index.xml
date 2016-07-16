@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 16 Jul 2016 15:20:44 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First Post]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 16 Jul 2016 15:35:06 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First Post]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Trying out HubPress.<br>
@@ -35,18 +35,80 @@ Neither is the tip icon.
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_themes">Themes</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_themes">Themes</h3>
 <div class="paragraph">
 <p>I tried the <a href="https://github.com/HubPress/hubpress.io/tree/master/themes">themes</a> available.<br>
 Here&#8217;s how they look.</p>
 </div>
+<div class="sect3">
+<h4 id="_casper">Casper</h4>
+<div class="paragraph">
+<p>The note and info icond didn&#8217;t work as you can see below.<br>
+But the theme itself looks okay.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="http://github.com/blahster/blahster.github.io/images/casper-screenshot.png" alt="casper">
+<img src="/images/casper-screenshot.png" alt="casper">
 </div>
-<div class="title">Figure 1. Block image</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ghostium">Ghostium</h4>
+<div class="paragraph">
+<p>Nah, not too nice.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/ghostium-screenshot.png" alt="ghostium">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ichi">Ichi</h4>
+<div class="paragraph">
+<p>This one really works when you have a lot of posts and need a sidebar navigation.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/ichi-screenshot.png" alt="ichi">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_roon">Roon</h4>
+<div class="paragraph">
+<p>Not too shabby and I think the homepage looks quite good.<br>
+Maybe I&#8217;ll use this.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/roon-screenshot.png" alt="roon">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_saga">Saga</h4>
+<div class="paragraph">
+<p>Maybe this needs some customization.<br>
+Something to experiment later. Much later.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/saga-screenshot.png" alt="saga">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_uno_zen">Uno-zen</h4>
+<div class="paragraph">
+<p>Yeah, this one has some basic problems.<br>
+Skipping.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/uno-zen-screenshot.png" alt="uno-zen">
+</div>
 </div>
 </div>
 </div>]]></description><link>https://blahster.github.io/2016/07/16/First-Post.html</link><guid isPermaLink="true">https://blahster.github.io/2016/07/16/First-Post.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ AsciiDoc]]></category><pubDate>Sat, 16 Jul 2016 00:00:00 GMT</pubDate></item></channel></rss>
