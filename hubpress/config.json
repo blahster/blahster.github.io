@@ -4,7 +4,12 @@
     "repositoryName": "blahster.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "परिभ्रम",
+    "description": "Ramblings"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
