@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 16 Jul 2016 12:47:01 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First Post]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 16 Jul 2016 12:51:45 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First Post]]></title><description><![CDATA[<div class="paragraph">
 <p>Trying out HubPress.<br>
 No idea how AsciiDoc works just yet.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://powerman.name/doc/asciidoc">This</a> seems like a good cheatsheet for AsciiDoc syntax.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">This is a title</div>
+Does this work?
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Another title</div>
+just a tip.
+</td>
+</tr>
+</table>
 </div>]]></description><link>https://blahster.github.io/2016/07/16/First-Post.html</link><guid isPermaLink="true">https://blahster.github.io/2016/07/16/First-Post.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ AsciiDoc]]></category><pubDate>Sat, 16 Jul 2016 00:00:00 GMT</pubDate></item></channel></rss>
