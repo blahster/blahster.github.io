@@ -1,0 +1,6 @@
+= First Post
+
+Trying out HubPress. +
+No idea how AsciiDoc works just yet.
+
+:hp-tags: hubpress
