@@ -1,5 +1,5 @@
 = First Post
-:hp-tags: HubPress, AsciiDoc,
+:hp-tags: HubPress, AsciiDoc
 
 Trying out HubPress. +
 No idea how AsciiDoc works just yet.
@@ -7,7 +7,14 @@ No idea how AsciiDoc works just yet.
 link:https://powerman.name/doc/asciidoc[This] seems like a good cheatsheet for AsciiDoc syntax.
 
 .This is a title
-NOTE: Does this work?
+NOTE: The note icon is not rendering.
 
 .Another title
-TIP: just a tip.
+TIP: Neither is the tip icon.
+
+
+.Sidebar title
+****
+Sidebar stuff +
+blah blah
+****
