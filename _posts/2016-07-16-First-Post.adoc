@@ -12,10 +12,40 @@ NOTE: The note icon is not rendering.
 .Another title
 TIP: Neither is the tip icon.
 
-== Themes
+=== Themes
 I tried the link:https://github.com/HubPress/hubpress.io/tree/master/themes[themes] available. +
 Here's how they look.
 
-.Block image
-image::http://github.com/blahster/blahster.github.io/images/casper-screenshot.png[casper]
+==== Casper
+The note and info icond didn't work as you can see below. +
+But the theme itself looks okay.
 
+image::/images/casper-screenshot.png[casper]
+
+==== Ghostium
+Nah, not too nice.
+
+image::/images/ghostium-screenshot.png[ghostium]
+
+==== Ichi
+This one really works when you have a lot of posts and need a sidebar navigation.
+
+image::/images/ichi-screenshot.png[ichi]
+
+==== Roon
+Not too shabby and I think the homepage looks quite good. +
+Maybe I'll use this.
+
+image::/images/roon-screenshot.png[roon]
+
+==== Saga
+Maybe this needs some customization. +
+Something to experiment later. Much later.
+
+image::/images/saga-screenshot.png[saga]
+
+==== Uno-zen
+Yeah, this one has some basic problems. +
+Skipping.
+
+image::/images/uno-zen-screenshot.png[uno-zen]
