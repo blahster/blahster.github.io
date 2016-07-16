@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 16 Jul 2016 13:11:40 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First Post]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 16 Jul 2016 15:19:36 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First Post]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
 <p>Trying out HubPress.<br>
 No idea how AsciiDoc works just yet.</p>
 </div>
@@ -31,12 +33,20 @@ Neither is the tip icon.
 </tr>
 </table>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Sidebar title</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_themes">Themes</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Sidebar stuff<br>
-blah blah</p>
+<p>I tried the <a href="https://github.com/HubPress/hubpress.io/tree/master/themes">themes</a> available.<br>
+Here&#8217;s how they look.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://github.com/blahster/blahster.github.io/images/casper-screenshot.png" alt="casper">
+</div>
+<div class="title">Figure 1. Block image</div>
 </div>
 </div>
 </div>]]></description><link>https://blahster.github.io/2016/07/16/First-Post.html</link><guid isPermaLink="true">https://blahster.github.io/2016/07/16/First-Post.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ AsciiDoc]]></category><pubDate>Sat, 16 Jul 2016 00:00:00 GMT</pubDate></item></channel></rss>
