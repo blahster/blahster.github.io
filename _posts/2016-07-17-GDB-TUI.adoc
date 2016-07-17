@@ -1,4 +1,4 @@
-= GDB
+= GDB TUI
 :hp-tags: gdb
 
 I had no idea GDB had an link:https://en.wikipedia.org/wiki/Ncurses[ncurses] interface!
