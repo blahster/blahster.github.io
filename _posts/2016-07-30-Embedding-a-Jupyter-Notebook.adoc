@@ -1,4 +1,10 @@
-= Embed a Jupyter Notebook
+= Embedding a Jupyter Notebook
+
+:hp-tags: Jupyter, HubPress, AsciiDoc
+
+Thanks to link:https://iacchus.github.io/[@iacchus]'s link:https://github.com/HubPress/hubpress.io/issues/406#issuecomment-235481873[instructions], I was able to embed a Jupyter Notebook into a post.
+
+Of course, it should be a lot easier than creating a gist, but it's a livable workaround for now :)
 
 ++++
 <!-- embed code goes here, for example: -->
