@@ -1,5 +1,5 @@
 = Embed a Jupyter Notebook
 ++++
 <!-- embed code goes here, for example: -->
-<script src="https://gist.github.com/iacchus/35fcee9ca4fe705ba2b2f4dd0951e273.js"></script>
+<script src="https://gist.github.com/blahster/a67c0d8f9bad9e85a663cadca5bbd9d7.js"></script>
 ++++
