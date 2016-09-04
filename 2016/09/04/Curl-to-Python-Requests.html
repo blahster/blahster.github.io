@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="https://blahster.github.io/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
-    <link rel="stylesheet" type="text/css" href="//blahster.github.io/themes/roon/assets/css/screen.css?v=1472991951418" />
+    <link rel="stylesheet" type="text/css" href="//blahster.github.io/themes/roon/assets/css/screen.css?v=1472994000514" />
 
     <link rel="canonical" href="https://blahster.github.io/2016/09/04/Curl-to-Python-Requests.html" />
     <meta name="referrer" content="origin" />
@@ -21,7 +21,7 @@
     <meta property="og:site_name" content="परिभ्रम" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Curl to Python Requests" />
-    <meta property="og:description" content="The VFS site for German visa is pretty good, but checking for status is not all ideal. You have to fill in 3 text fields image::/images/vfs-tracking.png[VFS tracking] Then some" />
+    <meta property="og:description" content="The VFS site for German visa is pretty good, but checking for status is not all ideal. You have to fill in 3 text fields of the receipt number and for some reason my Chrome wouldn&amp;#8217;t remember this. It&amp;#8217;s a minor annoyance. But it gave me" />
     <meta property="og:url" content="https://blahster.github.io/2016/09/04/Curl-to-Python-Requests.html" />
     <meta property="article:tag" content="lxml" />
     <meta property="article:tag" content=" python" />
@@ -29,7 +29,7 @@
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Curl to Python Requests" />
-    <meta name="twitter:description" content="The VFS site for German visa is pretty good, but checking for status is not all ideal. You have to fill in 3 text fields image::/images/vfs-tracking.png[VFS tracking] Then some" />
+    <meta name="twitter:description" content="The VFS site for German visa is pretty good, but checking for status is not all ideal. You have to fill in 3 text fields of the receipt number and for some reason my Chrome wouldn&amp;#8217;t remember this. It&amp;#8217;s a minor annoyance. But it gave me" />
     <meta name="twitter:url" content="https://blahster.github.io/2016/09/04/Curl-to-Python-Requests.html" />
     
     <script type="application/ld+json">
@@ -53,14 +53,115 @@ null
 
         <div class="text" id="js-post-content">
             <div class="paragraph">
-<p>The VFS site for German visa is pretty good, but checking for <a href="vfs-germany.co.in/Bangalore/track_application.html">status</a> is not all ideal.</p>
+<p>The VFS site for German visa is pretty good, but checking for <a href="vfs-germany.co.in/Bangalore/track_application.html">status</a> is not all ideal.<br>
+You have to fill in 3 text fields of the receipt number and for some reason my Chrome wouldn&#8217;t remember this. It&#8217;s a minor annoyance.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/vfs-tracking.png" alt="VFS tracking">
+</div>
 </div>
 <div class="paragraph">
-<p>You have to fill in 3 text fields
-image::/images/vfs-tracking.png[VFS tracking]</p>
+<p>But it gave me a chance to feel like I could hack a solution (aside: I&#8217;m too old for this).<br>
+First, I tried to use Chrome&#8217;s console. It took some 10 minutes (turns out I don&#8217;t remember a thing about how to use the selectors in JQuery.. oh well). This got me loading the page, opening console (⌘+Control+J), pasting</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$('#ctl00_CPH_txtR2Part1').value  = "xxxx";
+$('#ctl00_CPH_txtR2Part2').value = "xxxxxx";
+$('#ctl00_CPH_txtR2Part3').value = "xxxx";
+$('#ctl00_CPH_txtDOB_txtDate').value = "xx/xx/xxxx";
+$('#ctl00_CPH_btnDOB').click();</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Then some</p>
+<p>But it didn&#8217;t work. No idea why, but I have to go to the element selection mode, and click on the text box. Then the 5 lines above work.</p>
+</div>
+<div class="paragraph">
+<p>Hmm. What if I tried Python!</p>
+</div>
+<div class="paragraph">
+<p>I checked the network tab for the HTTP request that was getting fired. Right clicked on it and there&#8217;s a sweet "Copy as cURL" option. It worked in the terminal (iTerm of course). Nice.<br>
+Now what? PyCurl? Requests? Requests. I&#8217;ve not done much there.</p>
+</div>
+<div class="paragraph">
+<p>Okay, how do I go from a really long HTTP Post to something that requests can use?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>curl 'https://www.vfsvisaservices.com/germany-global-tracking/TrackingPAram.aspx?
+P=221%247%2444%2421%24227%24195%24228%24120%24228%24113%24154%24114%24232%2420%24203%2467%24
+46%2476%24241%24129%2492%24213%2466%24207%24213%24163%24149%24229%24124%2481%24185%24168'
+-H 'Pragma: no-cache' -H 'Origin: https://www.vfsvisaservices.com' -H 'Accept-Encoding: gzip, deflate, br'
+-H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1'
+-H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'
+-H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+-H 'Cache-Control: no-cache' -H 'Referer: https://www.vfsvisaservices.com/germany-global-tracking/TrackingPAram.aspx?
+P=221$7$44$21$227$195$228$120$228$113$154$114$232$20$203$67$46$76$241$129$92$213$66$207$213$
+163$149$229$124$81$185$168' -H 'Connection: keep-alive' -H 'DNT: 1' --data
+'__LASTFOCUS=&amp;__EVENTTARGET=&amp;__EVENTARGUMENT=&amp;__VIEWSTATE=oLZIZHSkvaHxQP1mIKd47ErlQ%2BVikMHF
+DW%2FRq%2FFmObyAqYUs94LAV%2BXBOqooRr0kFNPMoWl6vo%2B8S5LcZoep92Z66sFmzFEc1ZkgipAlNeqlLchdo%2F
+ie2lcyqgFVH0wRmOUvMoGOtMdS6utwqRidZavL6CmGO1587aYw4mCN6oCqwz8VeJpkcWqNGsM4LFABeokzLDZhELgQgD
+xbpriJWdnj%2B57ZyqpIXKn2PBhaHkD8lRfpFQkRByfLvoHHgXD1vPAEBEcFZ6NBfFsHZgKw%2BrXAZLC2%2Ba4lQA6f
+9DfwnvzM53V8XUFHyYFzasclk43lzO3Os1w%2FvPwxGxamfupA6TMKIwEq8%2BAU08tCbgvMC%2Fhzm2WI33RDK5Zy0u
+at8sBEg9e8yhbx3idBtQMcxfZbohhSaSJthrTLWz4OxzfW%2FRzRl2wZcET12kbkja4KIMWoQeHtDkKjRFtgQRgim%2B
+0aKgtPElCrglj3rPSDsR6%2BAQEObPgQA9XmZGfe2V2GkdANUym1Gswymy1635OVtMgz2RF%2BNbLikENto0qd2pyuKT
+aboFSU&amp;__EVENTVALIDATION=EEmvGQ8JqXVh2reC30%2FKULpCuimHj0P8haVqlKbW7EHTMrD8WkkKlGhdBpzEJGY8%
+2Fc7n4Yxt9ki%2Bj8EIQzc043blFnEdaIzkmvfJLQ76uSJTzKbfSeKsFWd0IuOtGGVQktSUjH2hULVRKk2%2FgnUSNR1
+IC9w%3D&amp;ctl00%24hidCSRF=TrackingPAram.aspxb23cd9f5-c29c-4cd4-859d-
+745a8d7250d2&amp;ctl00%24CPH%24txtR2Part1=GEBG&amp;ctl00%24CPH%24txtR2Part2=310816&amp;ctl00%24CPH%24txt
+R2Part3=0023&amp;ctl00%24CPH%24txtDOB%24txtDate=19%2F04%2F1980&amp;ctl00%24CPH%24btnDOB=Submit' --
+compressed</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Google suggested <a href="http://curl.trillworks.com/">this</a>. It gave,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>headers = {
+    'Pragma': 'no-cache',
+    'Origin': 'https://www.vfsvisaservices.com',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Language': 'en-US,en;q=0.8',
+    'Upgrade-Insecure-Requests': '1',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Cache-Control': 'no-cache',
+    'Referer': 'https://www.vfsvisaservices.com/germany-global-tracking/TrackingPAram.aspx?P=221$7$44$21$227$195$228$120$228$113$154$114$232$20$203$67$46$76$241$129$92$213$66$207$213$163$149$229$124$81$185$168',
+    'Connection': 'keep-alive',
+    'DNT': '1',
+}
+
+data = '__LASTFOCUS=&amp;__EVENTTARGET=&amp;__EVENTARGUMENT=&amp;__VIEWSTATE=oLZIZHSkvaHxQP1mIKd47ErlQ%2BVikMHFDW%2FRq%2FFmObyAqYUs94LAV%2BXBOqooRr0kFNPMoWl6vo%2B8S5LcZoep92Z66sFmzFEc1ZkgipAlNeqlLchdo%2Fie2lcyqgFVH0wRmOUvMoGOtMdS6utwqRidZavL6CmGO1587aYw4mCN6oCqwz8VeJpkcWqNGsM4LFABeokzLDZhELgQgDxbpriJWdnj%2B57ZyqpIXKn2PBhaHkD8lRfpFQkRByfLvoHHgXD1vPAEBEcFZ6NBfFsHZgKw%2BrXAZLC2%2Ba4lQA6f9DfwnvzM53V8XUFHyYFzasclk43lzO3Os1w%2FvPwxGxamfupA6TMKIwEq8%2BAU08tCbgvMC%2Fhzm2WI33RDK5Zy0uat8sBEg9e8yhbx3idBtQMcxfZbohhSaSJthrTLWz4OxzfW%2FRzRl2wZcET12kbkja4KIMWoQeHtDkKjRFtgQRgim%2B0aKgtPElCrglj3rPSDsR6%2BAQEObPgQA9XmZGfe2V2GkdANUym1Gswymy1635OVtMgz2RF%2BNbLikENto0qd2pyuKTaboFSU&amp;__EVENTVALIDATION=EEmvGQ8JqXVh2reC30%2FKULpCuimHj0P8haVqlKbW7EHTMrD8WkkKlGhdBpzEJGY8%2Fc7n4Yxt9ki%2Bj8EIQzc043blFnEdaIzkmvfJLQ76uSJTzKbfSeKsFWd0IuOtGGVQktSUjH2hULVRKk2%2FgnUSNR1IC9w%3D&amp;ctl00%24hidCSRF=TrackingPAram.aspxb23cd9f5-c29c-4cd4-859d-745a8d7250d2&amp;ctl00%24CPH%24txtR2Part1=GEBG&amp;ctl00%24CPH%24txtR2Part2=310816&amp;ctl00%24CPH%24txtR2Part3=0023&amp;ctl00%24CPH%24txtDOB%24txtDate=19%2F04%2F1980&amp;ctl00%24CPH%24btnDOB=Submit'
+
+requests.post('https://www.vfsvisaservices.com/germany-global-tracking/TrackingPAram.aspx?P=221%247%2444%2421%24227%24195%24228%24120%24228%24113%24154%24114%24232%2420%24203%2467%2446%2476%24241%24129%2492%24213%2466%24207%24213%24163%24149%24229%24124%2481%24185%24168', headers=headers, data=data)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Excellent.</p>
+</div>
+<div class="paragraph">
+<p>Next, a script with that, collect into a variable&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import requests
+from lxml import html
+headers = ...
+data = ...
+page = requests.post(...)
+# I'm sure there's a much better way than what follows:
+doc = html.fromstring(page.text)
+print(doc.cssselect("table")[4].getchildren()[0].getchildren()[0].text)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This assumes you have lxml or <a href="https://blahster.github.io/2016/09/04/Installing-lxml.html">install lxml</a>.</p>
+</div>
+<div class="paragraph">
+<p>Done.</p>
 </div>
         </div>
 
