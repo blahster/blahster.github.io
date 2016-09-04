@@ -1,12 +1,13 @@
 = Installing lxml
 
 :hp-tags: lxml, python, macos
-
 Turns out installing lxml involved a few steps on my Mac OS (El Capitan) 10.11.6
 
 1. `xcode-select --install`
 2. Update Xcode from the App Store (It's under the )
 3. `sudo xcrun cc` and type agree at the end of the document
 4. Finally a `pip install lxml` worked
+5. Then `brew install libxml2` followed by
+6. `brew link libxml2 --force`
 
 All this of course in a conda environment or a virtualenv
