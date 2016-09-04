@@ -7,8 +7,8 @@ You have to fill in 3 text fields of the receipt number and for some reason my C
 
 image::/images/vfs-tracking.png[VFS tracking]
 
-But it gave me a chance to feel like I could hack a solution (aside: I'm too old for this). +
-First, I tried to use Chrome's console. It took some 10 minutes (turns out I don't remember a thing about how to use the selectors in JQuery.. oh well). This got me loading the page, opening console (⌘+Control+J), pasting
+But it gave me a chance to feel like I could hack a solution (I'm too old for this). +
+First, I tried to use Chrome's console. It took some 10 minutes (turns out I don't remember a thing about how to use the selectors in JQuery.. oh well). This got me loading the page, opening console (⌘+Control+J), pasting ...
 ----
 $('#ctl00_CPH_txtR2Part1').value  = "xxxx";
 $('#ctl00_CPH_txtR2Part2').value = "xxxxxx";
@@ -17,7 +17,7 @@ $('#ctl00_CPH_txtDOB_txtDate').value = "xx/xx/xxxx";
 $('#ctl00_CPH_btnDOB').click();
 ----
 
-But it didn't work. No idea why, but I have to go to the element selection mode, and click on the text box. Then the 5 lines above work.
+didn't work. No idea why, but I have to go to the element selection mode, and click on the text box. Then the 5 lines above work.
 
 Hmm. What if I tried Python!
 
@@ -72,10 +72,9 @@ data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=oLZIZHSkvaHxQP1
 
 requests.post('https://www.vfsvisaservices.com/germany-global-tracking/TrackingPAram.aspx?P=221%247%2444%2421%24227%24195%24228%24120%24228%24113%24154%24114%24232%2420%24203%2467%2446%2476%24241%24129%2492%24213%2466%24207%24213%24163%24149%24229%24124%2481%24185%24168', headers=headers, data=data)
 ----
-Excellent.
-
+Excellent. +
 Next, a script with that, collect into a variable...
-[source,python]
+[source,Python]
 ----
 import requests
 from lxml import html
