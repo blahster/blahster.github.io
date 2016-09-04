@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 04 Sep 2016 13:01:10 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Installing lxml]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 04 Sep 2016 13:05:55 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Installing lxml]]></title><description><![CDATA[<div class="paragraph">
 <p>Turns out installing lxml involved a few steps on my Mac OS (El Capitan) 10.11.6</p>
 </div>
 <div class="olist arabic">
@@ -35,8 +35,8 @@ You have to fill in 3 text fields of the receipt number and for some reason my C
 </div>
 </div>
 <div class="paragraph">
-<p>But it gave me a chance to feel like I could hack a solution (aside: I&#8217;m too old for this).<br>
-First, I tried to use Chrome&#8217;s console. It took some 10 minutes (turns out I don&#8217;t remember a thing about how to use the selectors in JQuery.. oh well). This got me loading the page, opening console (⌘+Control+J), pasting</p>
+<p>But it gave me a chance to feel like I could hack a solution (I&#8217;m too old for this).<br>
+First, I tried to use Chrome&#8217;s console. It took some 10 minutes (turns out I don&#8217;t remember a thing about how to use the selectors in JQuery.. oh well). This got me loading the page, opening console (⌘+Control+J), pasting &#8230;&#8203;</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -48,7 +48,7 @@ $('#ctl00_CPH_btnDOB').click();</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>But it didn&#8217;t work. No idea why, but I have to go to the element selection mode, and click on the text box. Then the 5 lines above work.</p>
+<p>didn&#8217;t work. No idea why, but I have to go to the element selection mode, and click on the text box. Then the 5 lines above work.</p>
 </div>
 <div class="paragraph">
 <p>Hmm. What if I tried Python!</p>
@@ -113,14 +113,12 @@ requests.post('https://www.vfsvisaservices.com/germany-global-tracking/TrackingP
 </div>
 </div>
 <div class="paragraph">
-<p>Excellent.</p>
-</div>
-<div class="paragraph">
-<p>Next, a script with that, collect into a variable&#8230;&#8203;</p>
+<p>Excellent.<br>
+Next, a script with that, collect into a variable&#8230;&#8203;</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-python" data-lang="python">import requests
+<pre class="highlight"><code class="language-Python" data-lang="Python">import requests
 from lxml import html
 headers = ...
 data = ...
