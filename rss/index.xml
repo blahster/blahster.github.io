@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 04 Sep 2016 12:07:47 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Installing lxml]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 04 Sep 2016 12:25:51 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Installing lxml]]></title><description><![CDATA[<div class="paragraph">
 <p>Turns out installing lxml involved a few steps on my Mac OS (El Capitan) 10.11.6</p>
 </div>
 <div class="olist arabic">
@@ -25,7 +25,16 @@
 </div>
 <div class="paragraph">
 <p>All this of course in a conda environment or a virtualenv</p>
-</div>]]></description><link>https://blahster.github.io/2016/09/04/Installing-lxml.html</link><guid isPermaLink="true">https://blahster.github.io/2016/09/04/Installing-lxml.html</guid><category><![CDATA[lxml]]></category><category><![CDATA[ python]]></category><category><![CDATA[ macos]]></category><pubDate>Sun, 04 Sep 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Embedding a Jupyter Notebook]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://blahster.github.io/2016/09/04/Installing-lxml.html</link><guid isPermaLink="true">https://blahster.github.io/2016/09/04/Installing-lxml.html</guid><category><![CDATA[lxml]]></category><category><![CDATA[ python]]></category><category><![CDATA[ macos]]></category><pubDate>Sun, 04 Sep 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Curl to Python Requests]]></title><description><![CDATA[<div class="paragraph">
+<p>The VFS site for German visa is pretty good, but checking for <a href="vfs-germany.co.in/Bangalore/track_application.html">status</a> is not all ideal.</p>
+</div>
+<div class="paragraph">
+<p>You have to fill in 3 text fields
+image::/images/vfs-tracking.png[VFS tracking]</p>
+</div>
+<div class="paragraph">
+<p>Then some</p>
+</div>]]></description><link>https://blahster.github.io/2016/09/04/Curl-to-Python-Requests.html</link><guid isPermaLink="true">https://blahster.github.io/2016/09/04/Curl-to-Python-Requests.html</guid><category><![CDATA[lxml]]></category><category><![CDATA[ python]]></category><category><![CDATA[ requests]]></category><pubDate>Sun, 04 Sep 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Embedding a Jupyter Notebook]]></title><description><![CDATA[<div class="paragraph">
 <p>Thanks to <a href="https://iacchus.github.io/">@iacchus</a>'s <a href="https://github.com/HubPress/hubpress.io/issues/406#issuecomment-235481873">instructions</a>, I was able to embed a Jupyter Notebook into a post.</p>
 </div>
 <div class="paragraph">
