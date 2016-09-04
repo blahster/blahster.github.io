@@ -2,9 +2,91 @@
 
 :hp-tags: lxml, python, requests
 
-The VFS site for German visa is pretty good, but checking for link:vfs-germany.co.in/Bangalore/track_application.html[status] is not all ideal.
+The VFS site for German visa is pretty good, but checking for link:vfs-germany.co.in/Bangalore/track_application.html[status] is not all ideal. +
+You have to fill in 3 text fields of the receipt number and for some reason my Chrome wouldn't remember this. It's a minor annoyance.
 
-You have to fill in 3 text fields 
 image::/images/vfs-tracking.png[VFS tracking]
 
-Then some
+But it gave me a chance to feel like I could hack a solution (aside: I'm too old for this). +
+First, I tried to use Chrome's console. It took some 10 minutes (turns out I don't remember a thing about how to use the selectors in JQuery.. oh well). This got me loading the page, opening console (⌘+Control+J), pasting
+----
+$('#ctl00_CPH_txtR2Part1').value  = "xxxx";
+$('#ctl00_CPH_txtR2Part2').value = "xxxxxx";
+$('#ctl00_CPH_txtR2Part3').value = "xxxx";
+$('#ctl00_CPH_txtDOB_txtDate').value = "xx/xx/xxxx";
+$('#ctl00_CPH_btnDOB').click();
+----
+
+But it didn't work. No idea why, but I have to go to the element selection mode, and click on the text box. Then the 5 lines above work.
+
+Hmm. What if I tried Python!
+
+I checked the network tab for the HTTP request that was getting fired. Right clicked on it and there's a sweet "Copy as cURL" option. It worked in the terminal (iTerm of course). Nice. +
+Now what? PyCurl? Requests? Requests. I've not done much there.
+
+Okay, how do I go from a really long HTTP Post to something that requests can use?
+----
+curl 'https://www.vfsvisaservices.com/germany-global-tracking/TrackingPAram.aspx?
+P=221%247%2444%2421%24227%24195%24228%24120%24228%24113%24154%24114%24232%2420%24203%2467%24
+46%2476%24241%24129%2492%24213%2466%24207%24213%24163%24149%24229%24124%2481%24185%24168'
+-H 'Pragma: no-cache' -H 'Origin: https://www.vfsvisaservices.com' -H 'Accept-Encoding: gzip, deflate, br'
+-H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1'
+-H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'
+-H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+-H 'Cache-Control: no-cache' -H 'Referer: https://www.vfsvisaservices.com/germany-global-tracking/TrackingPAram.aspx?
+P=221$7$44$21$227$195$228$120$228$113$154$114$232$20$203$67$46$76$241$129$92$213$66$207$213$
+163$149$229$124$81$185$168' -H 'Connection: keep-alive' -H 'DNT: 1' --data 
+'__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=oLZIZHSkvaHxQP1mIKd47ErlQ%2BVikMHF
+DW%2FRq%2FFmObyAqYUs94LAV%2BXBOqooRr0kFNPMoWl6vo%2B8S5LcZoep92Z66sFmzFEc1ZkgipAlNeqlLchdo%2F
+ie2lcyqgFVH0wRmOUvMoGOtMdS6utwqRidZavL6CmGO1587aYw4mCN6oCqwz8VeJpkcWqNGsM4LFABeokzLDZhELgQgD
+xbpriJWdnj%2B57ZyqpIXKn2PBhaHkD8lRfpFQkRByfLvoHHgXD1vPAEBEcFZ6NBfFsHZgKw%2BrXAZLC2%2Ba4lQA6f
+9DfwnvzM53V8XUFHyYFzasclk43lzO3Os1w%2FvPwxGxamfupA6TMKIwEq8%2BAU08tCbgvMC%2Fhzm2WI33RDK5Zy0u
+at8sBEg9e8yhbx3idBtQMcxfZbohhSaSJthrTLWz4OxzfW%2FRzRl2wZcET12kbkja4KIMWoQeHtDkKjRFtgQRgim%2B
+0aKgtPElCrglj3rPSDsR6%2BAQEObPgQA9XmZGfe2V2GkdANUym1Gswymy1635OVtMgz2RF%2BNbLikENto0qd2pyuKT
+aboFSU&__EVENTVALIDATION=EEmvGQ8JqXVh2reC30%2FKULpCuimHj0P8haVqlKbW7EHTMrD8WkkKlGhdBpzEJGY8%
+2Fc7n4Yxt9ki%2Bj8EIQzc043blFnEdaIzkmvfJLQ76uSJTzKbfSeKsFWd0IuOtGGVQktSUjH2hULVRKk2%2FgnUSNR1
+IC9w%3D&ctl00%24hidCSRF=TrackingPAram.aspxb23cd9f5-c29c-4cd4-859d-
+745a8d7250d2&ctl00%24CPH%24txtR2Part1=GEBG&ctl00%24CPH%24txtR2Part2=310816&ctl00%24CPH%24txt
+R2Part3=0023&ctl00%24CPH%24txtDOB%24txtDate=19%2F04%2F1980&ctl00%24CPH%24btnDOB=Submit' --
+compressed
+----
+
+Google suggested link:http://curl.trillworks.com/[this]. It gave,
+----
+headers = {
+    'Pragma': 'no-cache',
+    'Origin': 'https://www.vfsvisaservices.com',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Language': 'en-US,en;q=0.8',
+    'Upgrade-Insecure-Requests': '1',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Cache-Control': 'no-cache',
+    'Referer': 'https://www.vfsvisaservices.com/germany-global-tracking/TrackingPAram.aspx?P=221$7$44$21$227$195$228$120$228$113$154$114$232$20$203$67$46$76$241$129$92$213$66$207$213$163$149$229$124$81$185$168',
+    'Connection': 'keep-alive',
+    'DNT': '1',
+}
+
+data = '__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=oLZIZHSkvaHxQP1mIKd47ErlQ%2BVikMHFDW%2FRq%2FFmObyAqYUs94LAV%2BXBOqooRr0kFNPMoWl6vo%2B8S5LcZoep92Z66sFmzFEc1ZkgipAlNeqlLchdo%2Fie2lcyqgFVH0wRmOUvMoGOtMdS6utwqRidZavL6CmGO1587aYw4mCN6oCqwz8VeJpkcWqNGsM4LFABeokzLDZhELgQgDxbpriJWdnj%2B57ZyqpIXKn2PBhaHkD8lRfpFQkRByfLvoHHgXD1vPAEBEcFZ6NBfFsHZgKw%2BrXAZLC2%2Ba4lQA6f9DfwnvzM53V8XUFHyYFzasclk43lzO3Os1w%2FvPwxGxamfupA6TMKIwEq8%2BAU08tCbgvMC%2Fhzm2WI33RDK5Zy0uat8sBEg9e8yhbx3idBtQMcxfZbohhSaSJthrTLWz4OxzfW%2FRzRl2wZcET12kbkja4KIMWoQeHtDkKjRFtgQRgim%2B0aKgtPElCrglj3rPSDsR6%2BAQEObPgQA9XmZGfe2V2GkdANUym1Gswymy1635OVtMgz2RF%2BNbLikENto0qd2pyuKTaboFSU&__EVENTVALIDATION=EEmvGQ8JqXVh2reC30%2FKULpCuimHj0P8haVqlKbW7EHTMrD8WkkKlGhdBpzEJGY8%2Fc7n4Yxt9ki%2Bj8EIQzc043blFnEdaIzkmvfJLQ76uSJTzKbfSeKsFWd0IuOtGGVQktSUjH2hULVRKk2%2FgnUSNR1IC9w%3D&ctl00%24hidCSRF=TrackingPAram.aspxb23cd9f5-c29c-4cd4-859d-745a8d7250d2&ctl00%24CPH%24txtR2Part1=GEBG&ctl00%24CPH%24txtR2Part2=310816&ctl00%24CPH%24txtR2Part3=0023&ctl00%24CPH%24txtDOB%24txtDate=19%2F04%2F1980&ctl00%24CPH%24btnDOB=Submit'
+
+requests.post('https://www.vfsvisaservices.com/germany-global-tracking/TrackingPAram.aspx?P=221%247%2444%2421%24227%24195%24228%24120%24228%24113%24154%24114%24232%2420%24203%2467%2446%2476%24241%24129%2492%24213%2466%24207%24213%24163%24149%24229%24124%2481%24185%24168', headers=headers, data=data)
+----
+Excellent.
+
+Next, a script with that, collect into a variable...
+[source, python]
+----
+import requests
+from lxml import html
+headers = ...
+data = ...
+page = requests.post(...)
+# I'm sure there's a much better way than what follows:
+doc = html.fromstring(page.text)
+print(doc.cssselect("table")[4].getchildren()[0].getchildren()[0].text)
+----
+
+This assumes you have lxml or link:https://blahster.github.io/2016/09/04/Installing-lxml.html[install lxml].
+
+Done.
