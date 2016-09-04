@@ -75,7 +75,7 @@ requests.post('https://www.vfsvisaservices.com/germany-global-tracking/TrackingP
 Excellent.
 
 Next, a script with that, collect into a variable...
-[source, python]
+[source,python]
 ----
 import requests
 from lxml import html
