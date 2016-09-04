@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 30 Jul 2016 08:45:10 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Embedding a Jupyter Notebook]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[परिभ्रम]]></title><description><![CDATA[Ramblings]]></description><link>https://blahster.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 04 Sep 2016 12:07:47 GMT</lastBuildDate><atom:link href="https://blahster.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Installing lxml]]></title><description><![CDATA[<div class="paragraph">
+<p>Turns out installing lxml involved a few steps on my Mac OS (El Capitan) 10.11.6</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>xcode-select --install</code></p>
+</li>
+<li>
+<p>Update Xcode from the App Store (It&#8217;s under the )</p>
+</li>
+<li>
+<p><code>sudo xcrun cc</code> and type agree at the end of the document</p>
+</li>
+<li>
+<p>Finally a <code>pip install lxml</code> worked</p>
+</li>
+<li>
+<p>Then <code>brew install libxml2</code> followed by</p>
+</li>
+<li>
+<p><code>brew link libxml2 --force</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>All this of course in a conda environment or a virtualenv</p>
+</div>]]></description><link>https://blahster.github.io/2016/09/04/Installing-lxml.html</link><guid isPermaLink="true">https://blahster.github.io/2016/09/04/Installing-lxml.html</guid><category><![CDATA[lxml]]></category><category><![CDATA[ python]]></category><category><![CDATA[ macos]]></category><pubDate>Sun, 04 Sep 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Embedding a Jupyter Notebook]]></title><description><![CDATA[<div class="paragraph">
 <p>Thanks to <a href="https://iacchus.github.io/">@iacchus</a>'s <a href="https://github.com/HubPress/hubpress.io/issues/406#issuecomment-235481873">instructions</a>, I was able to embed a Jupyter Notebook into a post.</p>
 </div>
 <div class="paragraph">
