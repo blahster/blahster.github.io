@@ -1,0 +1,10 @@
+= Curl to Python Requests
+
+:hp-tags: lxml, python, requests
+
+The VFS site for German visa is pretty good, but checking for link:vfs-germany.co.in/Bangalore/track_application.html[status] is not all ideal.
+
+You have to fill in 3 text fields 
+image::/images/vfs-tracking.png[VFS tracking]
+
+Then some
